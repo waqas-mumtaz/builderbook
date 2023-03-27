@@ -27,7 +27,7 @@ class EditBook extends React.Component {
 
     this.state = {
       book: props.book || {},
-      repos: [],
+      repos: [{ id: 1, full_name: 'http://www.example.com' }],
     };
   }
 
@@ -102,7 +102,7 @@ class EditBook extends React.Component {
           <div>
             <span>Github repo: </span>
             <Select
-              value={this.state.book.githubRepo || ''}
+              value={this.state.book.githubRepo || 'www.example.com'}
               input={<Input />}
               onChange={(event) => {
                 event.stopPropagation();
